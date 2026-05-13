@@ -1,44 +1,35 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Atividade de Fixação</title>
+    <title>Tabuada</title>
   </head>
 
   <body>
-    <div id="condicoes">
-      <h1>Verificar se pode votar</h1>
+    <div id="container">
+      <h1>Tabuada</h1>
+      <input type="number" id="valor" placeholder="Digite um número" />
+      <button onclick="gerarTabuada()">Gerar</button>
+      <div id="resultado"></div>
+    </div>
+    <script>
+      function gerarTabuada() {
+        let numero = Number(document.getElementById("valor").value);
+        let resultado = document.getElementById("resultado");
 
-      <h2 id="idade"></h2>
-
-      <script>
-        let idade = Number(prompt("Qual sua idade?"));
-
-        let votar;
-
-        if (idade < 16) {
-          console.log("Você é maior de idade.");
-          votar = "Não";
-          status = "Não pode votar";
-        } else if (idade < 18) {
-          console.log("Você é menor de idade.");
-          status = "Voto opicional";
-          votar = "Se quiser";
-        } else {
-          console.log("Você é maior de idade.");
-          status = "Voto obrigatorio.";
-          votar = "Sim";
+        if (!numero) {
+          resultado.innerHTML = "<p>Digite um número válido.</p>";
+          return;
         }
 
-        let v_idade = document.getElementById("idade");
-
-        v_idade.innerText = `
-          Sua idade é: ${idade}
-          Pode votar: ${votar}
-          Situação: ${status}
-        `;
-      </script>
-    </div>
+        resultado.innerHTML = "";
+        for (let i = 1; i <= 10; i++) {
+          resultado.innerHTML += `
+            <p>${numero} x ${i} = ${numero * i}</p>
+          `;
+        }
+      }
+    </script>
   </body>
 </html>

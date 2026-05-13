@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Simples</title>
+  </head>
+  <body>
+    <h1 id="titulo">Calculadora Simples</h1>
+    <div id="resultado">
+      <h2 id="Resultados"></h2>
+      <script>
+        // Declare duas variáveis com números
+        let num1 = Number(prompt("Digite o Primeiro Numero: "));
+        let num2 = Number(prompt("Digite o Segundo Numero: "));
+        console.log(typeof num1);
+        console.log(typeof num2);
+        // Realize operações
+        let soma = num1 + num2;
+        let subtracao = num1 - num2;
+        let multiplicacao = num1 * num2;
+        let divisao = num1 / num2;
+        // Exiba os resultados no console
+        console.log("Soma:", soma);
+        console.log("Subtração:", subtracao);
+        console.log("Multiplicação:", multiplicacao);
+        console.log("Divisão:", divisao);
+
+        let displayResultado = document.getElementById("resultado");
+
+        displayResultado.innerText = `  
+        Resultados
+        Soma: ${soma}
+        Subtração: ${subtracao}
+        Multiplicação: ${multiplicacao}
+        Divisão: ${divisao}
+        `;
+      </script>
+    </div>
+
+    <a href="index.html">Voltar ao Inicio</a>
+  </body>
+</html>

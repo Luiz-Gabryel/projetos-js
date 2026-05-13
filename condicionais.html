@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade de Fixação</title>
+  </head>
+
+  <body>
+    <div id="condicoes">
+      <h1>Verificar se pode votar</h1>
+
+      <h2 id="idade"></h2>
+
+      <script>
+        let idade = Number(prompt("Qual sua idade?"));
+
+        let votar;
+
+        if (idade < 16) {
+          console.log("Você é maior de idade.");
+          votar = "Não";
+          status = "Não pode votar";
+        } else if (idade < 18) {
+          console.log("Você é menor de idade.");
+          status = "Voto opicional";
+          votar = "Se quiser";
+        } else {
+          console.log("Você é maior de idade.");
+          status = "Voto obrigatorio.";
+          votar = "Sim";
+        }
+
+        let v_idade = document.getElementById("idade");
+
+        v_idade.innerText = `
+          Sua idade é: ${idade}
+          Pode votar: ${votar}
+          Situação: ${status}
+        `;
+      </script>
+    </div>
+  </body>
+</html>

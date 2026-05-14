@@ -1,27 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Verificador de Números Primos</title>
-  </head>
-  <body>
+</head>
+<body>
     <h1>Verificador de Números Primos</h1>
-    <script>
-      let numero = 29;
-      let isPrimo = true;
+    <p id="resultado"></p>
 
-      for (let i = 2; i < numero; i++) {
-        if (numero % i === 0) {
-          isPrimo = false;
-          break;
+    <script>
+        let numero = Number(prompt("Qual o número?"));
+        let isPrimo = numero > 1; 
+        let valor = "";
+
+        for (let i = 2; i < numero; i++) {
+            if (numero % i === 0) {
+                isPrimo = false;
+                break;
+            }
         }
-      }
-      if (isPrimo) {
-        console.log(numero + " é um número primo.");
-      } else {
-        console.log(numero + " não é um número primo.");
-      }
+
+        if (isPrimo) {
+            valor = "é um número primo.";
+        } else {
+            valor = "não é um número primo.";
+        }
+
+        
+        let ver = document.getElementById("resultado");
+        ver.innerText = `O número ${numero} ${valor}`;
+        
+        console.log(numero + " " + valor);
     </script>
-  </body>
+</body>
 </html>
